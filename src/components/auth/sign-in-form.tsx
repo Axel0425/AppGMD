@@ -72,11 +72,12 @@ export function SignInForm(): React.JSX.Element {
   return (
     <Stack spacing={4}>
       <Stack spacing={1}>
-        <Typography variant="h4">Sign in</Typography>
+      <img src="https://expo.thelogisticsworld.com/wp-content/themes/theme-summitexpo/directorio/assets/logos/10b7830a-6ae2-4396-8d1a-85cf39c43f0d.png"  />
+        <Typography variant="h4">BIENVENIDOS</Typography>
         <Typography color="text.secondary" variant="body2">
-          Don&apos;t have an account?{' '}
+          ¿No tienes una cuenta?{' '}
           <Link component={RouterLink} href={paths.auth.signUp} underline="hover" variant="subtitle2">
-            Sign up
+            Inscribirse
           </Link>
         </Typography>
       </Stack>
@@ -87,8 +88,8 @@ export function SignInForm(): React.JSX.Element {
             name="email"
             render={({ field }) => (
               <FormControl error={Boolean(errors.email)}>
-                <InputLabel>Email address</InputLabel>
-                <OutlinedInput {...field} label="Email address" type="email" />
+                <InputLabel>correo electrónico</InputLabel>
+                <OutlinedInput {...field} label="correo electrónico" type="email" />
                 {errors.email ? <FormHelperText>{errors.email.message}</FormHelperText> : null}
               </FormControl>
             )}
@@ -98,7 +99,7 @@ export function SignInForm(): React.JSX.Element {
             name="password"
             render={({ field }) => (
               <FormControl error={Boolean(errors.password)}>
-                <InputLabel>Password</InputLabel>
+                <InputLabel>contraseña</InputLabel>
                 <OutlinedInput
                   {...field}
                   endAdornment={
@@ -120,30 +121,30 @@ export function SignInForm(): React.JSX.Element {
                       />
                     )
                   }
-                  label="Password"
+                  label="contraseña"
                   type={showPassword ? 'text' : 'password'}
                 />
                 {errors.password ? <FormHelperText>{errors.password.message}</FormHelperText> : null}
               </FormControl>
             )}
           />
-          <div>
-            <Link component={RouterLink} href={paths.auth.resetPassword} variant="subtitle2">
-              Forgot password?
-            </Link>
-          </div>
+          
           {errors.root ? <Alert color="error">{errors.root.message}</Alert> : null}
           <Button disabled={isPending} type="submit" variant="contained">
-            Sign in
-          </Button>
+            Iniciar sesión
+          </Button><div>
+            <Link component={RouterLink} href={paths.auth.resetPassword} variant="subtitle2">
+            ¿Has olvidado tu contraseña?
+            </Link>
+          </div>
         </Stack>
       </form>
       <Alert color="warning">
-        Use{' '}
+        Usa{' '}
         <Typography component="span" sx={{ fontWeight: 700 }} variant="inherit">
           sofia@devias.io
         </Typography>{' '}
-        with password{' '}
+        con contraseña{' '}
         <Typography component="span" sx={{ fontWeight: 700 }} variant="inherit">
           Secret1
         </Typography>

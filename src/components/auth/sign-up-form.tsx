@@ -73,11 +73,14 @@ export function SignUpForm(): React.JSX.Element {
   return (
     <Stack spacing={3}>
       <Stack spacing={1}>
-        <Typography variant="h4">Sign up</Typography>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
+        <img src="https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-orange.png" width="100" height="100" />
+      </div>
+        <Typography variant="h4">USUARIO</Typography>
         <Typography color="text.secondary" variant="body2">
-          Already have an account?{' '}
+        ¿Ya tienes una cuenta?{' '}
           <Link component={RouterLink} href={paths.auth.signIn} underline="hover" variant="subtitle2">
-            Sign in
+            Iniciar sesion
           </Link>
         </Typography>
       </Stack>
@@ -88,8 +91,8 @@ export function SignUpForm(): React.JSX.Element {
             name="firstName"
             render={({ field }) => (
               <FormControl error={Boolean(errors.firstName)}>
-                <InputLabel>First name</InputLabel>
-                <OutlinedInput {...field} label="First name" />
+                <InputLabel>Nombre</InputLabel>
+                <OutlinedInput {...field} label="Nombre" />
                 {errors.firstName ? <FormHelperText>{errors.firstName.message}</FormHelperText> : null}
               </FormControl>
             )}
@@ -99,8 +102,8 @@ export function SignUpForm(): React.JSX.Element {
             name="lastName"
             render={({ field }) => (
               <FormControl error={Boolean(errors.firstName)}>
-                <InputLabel>Last name</InputLabel>
-                <OutlinedInput {...field} label="Last name" />
+                <InputLabel>Apellidos</InputLabel>
+                <OutlinedInput {...field} label="Apellidos" />
                 {errors.firstName ? <FormHelperText>{errors.firstName.message}</FormHelperText> : null}
               </FormControl>
             )}
@@ -110,8 +113,8 @@ export function SignUpForm(): React.JSX.Element {
             name="email"
             render={({ field }) => (
               <FormControl error={Boolean(errors.email)}>
-                <InputLabel>Email address</InputLabel>
-                <OutlinedInput {...field} label="Email address" type="email" />
+                <InputLabel>Correo electronico</InputLabel>
+                <OutlinedInput {...field} label="Correo elecronico" type="email" />
                 {errors.email ? <FormHelperText>{errors.email.message}</FormHelperText> : null}
               </FormControl>
             )}
@@ -121,8 +124,8 @@ export function SignUpForm(): React.JSX.Element {
             name="password"
             render={({ field }) => (
               <FormControl error={Boolean(errors.password)}>
-                <InputLabel>Password</InputLabel>
-                <OutlinedInput {...field} label="Password" type="password" />
+                <InputLabel>Rol</InputLabel>
+                <OutlinedInput {...field} label="Rol" type="password" />
                 {errors.password ? <FormHelperText>{errors.password.message}</FormHelperText> : null}
               </FormControl>
             )}
@@ -136,7 +139,7 @@ export function SignUpForm(): React.JSX.Element {
                   control={<Checkbox {...field} />}
                   label={
                     <React.Fragment>
-                      I have read the <Link>terms and conditions</Link>
+                      He leido los <Link>términos y condiciones</Link>
                     </React.Fragment>
                   }
                 />
@@ -146,11 +149,11 @@ export function SignUpForm(): React.JSX.Element {
           />
           {errors.root ? <Alert color="error">{errors.root.message}</Alert> : null}
           <Button disabled={isPending} type="submit" variant="contained">
-            Sign up
+            GUARDAR
           </Button>
         </Stack>
       </form>
-      <Alert color="warning">Created users are not persisted</Alert>
+      <Alert color="warning">Los usuarios creados no se persisten</Alert>
     </Stack>
   );
 }
